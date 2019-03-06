@@ -24,6 +24,8 @@ module KeyCache
   # Usage
   #
   # class SomeModel < ApplicationRecord
+  #   include KeyCache::Cache
+  #
   #   cache_key key: "some_model/:id",
   #             value: :some_attribute,
   #             method: some_model_cache
