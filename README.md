@@ -7,15 +7,12 @@ caching values in redis.
 
 ## Arguments
 
-key: key value to store the location. Use "/" to define segments and ":"
-     to define segements that you want to be replaced by values returned
-     from methods in your class
+*key*: key value to store the location. Use "/" to define segments and ":"
+to define segments that you want to be replaced by values returned from methods in your class
 
-value: When saving the record, this method will be called to get the value
-       to store in Redis.
+*value*: When saving the record, this method will be called to get the value to store in Redis.
 
- method: defines a method which can be called to get the value of the
-         stored Redis key
+*method*: defines a method which can be called to get the value of the stored Redis key
 
 ## Usage
 
