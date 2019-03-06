@@ -22,7 +22,7 @@ class SomeModel < ApplicationRecord
 
   cache_key key: "some_model/:id",
             value: :some_attribute,
-            method: some_model_cache
+            method: :some_model_cache
 end
 
 s = SomeModel.save!(some_value: "this value")
