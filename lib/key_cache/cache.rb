@@ -87,7 +87,7 @@ module KeyCache
     def cache_key_decode(key)
       key_parts = key.split('/')
       key_parts.map! do |v|
-        v.match?(/^:/) ? send(v.tr(':', '')) : v
+        v.match(/^:/) ? send(v.tr(':', '')) : v
       end
       key_parts.join(':')
     end
