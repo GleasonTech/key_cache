@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors     = ['Nicholas W. Watson']
   s.email       = 'nicholas.w.watson@me.com'
   s.summary     = 'KeyCache ties in to ActiveRecord callbacks and enables you to store info in redis'
-  s.description = 'A simple hello world gem'
+  s.description = 'KeyCache ties in to ActiveRecord callbacks and enables you to store info in redis'
 
   s.files = Dir['{lib}/**/*', 'README.md']
   s.homepage    = 'https://github.com/nwwatson/key_cache'
