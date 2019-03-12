@@ -52,9 +52,11 @@ module KeyCache
 
     class_methods do
       def cache_key(options = {})
-        key = options.fetch(:key)
-        value = options.fetch(:value)
-        method = options.fetch(:method)
+        key = options.fetch(:key, nil)
+        value = options.fetch(:value, nil)
+        method = options.fetch(:method, nil)
+
+        return unless key && value && method
 
         class_eval <<-METHOD, __FILE__, __LINE__ + 1
           def #{method}
