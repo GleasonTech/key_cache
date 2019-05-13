@@ -55,6 +55,7 @@ module KeyCache
         key = options.fetch(:key, nil)
         value = options.fetch(:value, nil)
         method = options.fetch(:method, nil)
+        include_callbacks = options.fetch(:include_callbacks, true)
 
         return unless key && value && method
 
@@ -75,13 +76,13 @@ module KeyCache
             Redis.current.set(cache_key_decode("#{key}"), self.send("#{value.to_sym}"))
           end
 
-          after_save :save_#{method}
+          #{"after_save :save_#{method}" if include_callbacks}
 
           def destroy_#{method}
             Redis.current.del(cache_key_decode("#{key}"))
           end
 
-          after_destroy :destroy_#{method}
+          #{"after_destroy :destroy_#{method}" if include_callbacks}
         METHOD
       end
     end
